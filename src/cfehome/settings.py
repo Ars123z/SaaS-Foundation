@@ -92,11 +92,11 @@ WSGI_APPLICATION = "cfehome.wsgi.application"
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': config('PGDATABASE'),
-    'USER': config('PGUSER'),
-    'PASSWORD': config('PGPASSWORD'),
-    'HOST': config('PGHOST'),
-    'PORT': config('PGPORT', 5432),
+    'NAME': 'neondb',
+    'USER': 'neondb_owner',
+    'PASSWORD': 'RI0j9bQwqzpN',
+    'HOST': 'ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech',
+    'PORT': 5432,
     'OPTIONS': {
       'sslmode': 'require',
     },
