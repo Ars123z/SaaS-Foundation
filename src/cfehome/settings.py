@@ -89,10 +89,25 @@ WSGI_APPLICATION = "cfehome.wsgi.application"
 
 
 # Replace the DATABASES section of your settings.py with this
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'neondb',
+#     'USER': 'neondb_owner',
+#     'PASSWORD': 'RI0j9bQwqzpN',
+#     'HOST': 'ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech',
+#     'PORT': 5432,
+#     'OPTIONS': {
+#       'sslmode': 'require',
+#     },
+#   }
+# }
+
+
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'neondb',
+    'NAME': config('PGDATABASE'),
     'USER': 'neondb_owner',
     'PASSWORD': 'RI0j9bQwqzpN',
     'HOST': 'ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech',
@@ -102,6 +117,7 @@ DATABASES = {
     },
   }
 }
+
 
 
 
