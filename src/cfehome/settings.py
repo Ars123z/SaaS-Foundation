@@ -87,8 +87,33 @@ WSGI_APPLICATION = "cfehome.wsgi.application"
 
 # Add these at the top of your settings.py
 
+# .env content for your reference
 
-# Replace the DATABASES section of your settings.py with this
+# DJANGO_SECRET_KEY="django-insecure-3x@#1$2%3^4&5*6(7)8_9+0!a-b=c~d[e]f{g}h|i\j:k;l<m>n?o/p
+# "
+# DJANGO_DEBUG="True"
+# DATABASE_URL="postgresql://neondb_owner:RI0j9bQwqzpN@ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech/neondb?sslmode=require"
+# PGHOST='ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech'
+# PGDATABASE='neondb'
+# PGUSER='neondb_owner'
+# PGPASSWORD='RI0j9bQwqzpN'
+
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME':  config('PGDATABASE'),
+    'USER': config('PGUSER'),
+    'PASSWORD': config('PGPASSWORD'),
+    'HOST': config('PGHOST'),
+    'PORT': 5432,
+    'OPTIONS': {
+      'sslmode': 'require',
+    },
+  }
+}
+
+
 # DATABASES = {
 #   'default': {
 #     'ENGINE': 'django.db.backends.postgresql',
@@ -102,21 +127,6 @@ WSGI_APPLICATION = "cfehome.wsgi.application"
 #     },
 #   }
 # }
-
-
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'neondb',
-    'USER': 'neondb_owner',
-    'PASSWORD': 'RI0j9bQwqzpN',
-    'HOST': 'ep-frosty-sun-a6di196y.us-west-2.aws.neon.tech',
-    'PORT': 5432,
-    'OPTIONS': {
-      'sslmode': 'require',
-    },
-  }
-}
 
 
 
